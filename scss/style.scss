@@ -1,0 +1,115 @@
+@import "helpers";
+
+#map-wrapper {
+    position: relative;
+    max-width: 1370px;
+    height: 876px;
+    margin: 0 auto;
+
+    #mapid {
+        height: 100%;
+        z-index: 1;
+    }
+    #map-data-modal {
+        display: none;
+        position: absolute;
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 12px solid #e3be40;
+        z-index: 2;
+        padding: 2rem 3rem 3rem;
+        box-shadow: 0px 7px 13px 4px rgba(black, 0.6);
+        &.reveal {
+            display: block;
+        }
+
+        .e-title-row {
+            position: relative;
+            border-bottom: 1px solid black;
+            padding: 0 0 0.8rem;
+            align-items: center;
+            margin-bottom: 2rem;
+            .e-col {
+                padding: 0;
+            }
+            .e-title {
+                font-size: calculateRem(32px);
+                font-weight: bold;
+            }
+            #close-map-modal {
+                font-size: calculateRem(26px);
+                position: absolute;
+                right: -99%;
+                top: -24px;
+            }
+        }
+        .e-data-row-top {
+            .e-stats {
+                padding: 0;
+                .e-stats-list {
+                    list-style: none;
+
+                    .e-stat {
+                        margin: 0 0 2rem 0;
+                        font-size: calculateRem(18px);
+                        //margin-bottom: 2rem;
+                        span {
+                            padding: 0;
+                        }
+                        .e-stat-title {
+                            font-weight: bold;
+                        }
+                        .e-stat-data {
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+            .e-image {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .e-data-row-bottom {
+            align-items: center;
+            justify-content: center;
+            .e-btn {
+                padding: 0.6rem 1.6rem;
+                background-color: black;
+                color: white;
+                border: 1px solid black;
+                border-radius: 0;
+                margin-top: 2rem;
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+    }
+    @media (max-width: 999px) {
+        .e-stats-list {
+            padding: 0rem;
+        }
+        #map-data-modal {
+            top: 4rem;
+            transform: translate(-50%, 0%);
+            .e-data-row-top {
+                .e-stats,
+                .e-image {
+                    width: 100%;
+                    flex: 0 0 100%;
+                }
+            }
+        }
+    }
+    @media (min-width: 1000px) {
+        .e-stats-list {
+            padding: 4rem 0 0 0;
+        }
+    }
+}
